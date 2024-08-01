@@ -8,7 +8,7 @@ import { reactive } from 'vue';
     soma: (a, b) => a + b,
     subtracao: (a, b) => a - b,
     multiplicacao: (a, b) => a * b,
-    divisao: (a, b) => (b !== 0 ? a / b : '0'),
+    divisao: (a, b) => (b !== 0 ? a / b : 'Zero'),
     },
     resultado: 0,
 });
@@ -17,6 +17,7 @@ const calcularResultado = () => {
     const { primeiroNumero, segundoNumero, contaMatematica } = estado;
     const num1 = parseFloat(primeiroNumero);
     const num2 = parseFloat(segundoNumero);
+    
     estado.resultado = !isNaN(num1) && !isNaN(num2) ? estado.operacoes[contaMatematica](num1, num2) : 'Operação inválida';
 };
 </script>
